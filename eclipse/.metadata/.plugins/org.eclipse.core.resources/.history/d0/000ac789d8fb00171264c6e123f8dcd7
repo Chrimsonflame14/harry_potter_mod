@@ -1,0 +1,81 @@
+package chrimsonflame14.harrypotter;
+
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.item.Item;
+
+@Mod(modid = "hpm", name = "Harry Potter Mod", version = "1.0")
+public class HarryPotterMod {
+	//Some items may be removed.
+	public static Item itemBroom; 
+	public static Item itemCoin;
+	public static Item itemFlyingCar; //May be removed to be determined.
+	public static Item itemWand;
+	public static Item itemAmulet;
+	public static Item itemCloak;
+	public static Item itemGryffindorFlag;
+	public static Item itemHufflepuffFlag;
+	public static Item itemRavenclawFlag;
+	public static Item itemSlytherinFlag;
+	public static Item itemSrobe;
+	public static Item itemRrobe;
+	public static Item itemGrobe;
+	public static Item itemHrobe;
+	public static Item itemDagger;
+	public static Item itemChalk;
+	
+	
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event) {
+		//Item/Block init and registering
+		//Config handling
+		itemBroom = new ItemBroom().setUnlocalizedName("ItemBroom"); 
+		GameRegistry.registerItem(itemBroom, itemBroom.getUnlocalizedName().substring(5));
+		
+		itemCoin = new ItemCoin().setUnlocalizedName("ItemCoin");
+		GameRegistry.registerItem(itemCoin, itemCoin.getUnlocalizedName().substring(5));	
+		
+		itemFlyingCar = new ItemFlyinCar().setUnlocalizedName("ItemFlying Car"); //Maybe be removed
+		GameRegistry.registerItem(itemFlyingCar, itemFlyingCar.getUnlocalizedName().substring(5));
+		
+		itemWand = new ItemWand().setUnlocalizedName("ItemWand");
+		GameRegistry.registerItem(itemWand, itemWand.getUnlocalizedName().substring(5));
+		
+		itemAmulet = new ItemAmulet().setUnlocalizedName("ItemAmulet");
+		GameRegistry.registerItem(itemAmulet, itemAmulet.getUnlocalizedName().substring(5));
+		
+		itemCloak = new ItemCloak().setUnlocalizedName("ItemCloak");
+		GameRegistry.registerItem(itemCloak, itemCloak.getUnlocalizedName().substring(5));
+		
+		itemGryffindorFlag = new ItemGryffindorFlag().setUnlocalizedName("ItemGryffindor Flag");
+		GameRegistry.registerItem(itemGryffindorFlag, itemGryffindorFlag.getUnlocalizedName().substring(5));
+		
+		itemHufflepuffFlag = new ItemHufflepuffFlag().setUnlocalizedName("ItemHufflepuff Flag");
+		GameRegistry.registerItem(itemHufflepuffFlag, itemHufflepuffFlag.getUnlocalizedName().substring(5));
+		
+		itemRavenclawFlag = new ItemReavenclawFlag().setUnlocalizedName("ItemRavenclaw Flag");
+		GameRegistry.registerItem(itemRavenclawFlag, itemRavenclawFlag.getUnlocalizedName().substring(5));
+		
+		itemSlytherinFlag = new ItemSlytherinFlag().setUnlocalizedName("ItemSlytherin Flag");
+		GameRegistry.registerItem(itemSlytherinFlag, itemSlytherinFlag.getUnlocalizedName().substring(5));
+		
+		itemChalk = new ItemChalk();
+		
+		
+		
+	}
+	
+	@EventHandler
+	public void init(FMLInitializationEvent event) {
+		//Proxy, TILeENtity, entity, GUI and Packet Registering
+	}
+	
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event) {
+		
+	}
+}

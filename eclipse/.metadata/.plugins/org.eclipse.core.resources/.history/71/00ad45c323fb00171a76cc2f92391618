@@ -1,0 +1,45 @@
+package chrimsonflame14.harrypotter;
+
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.item.Item;
+
+@Mod(modid = "hpm", name = "Harry Potter Mod", version = "1.0")
+public class HarryPotterMod {
+	
+	public static Item itemBroom; 
+	public static Item itemCoin;
+	public static Item itemFlyingCar; //May be removed to be determined.
+	public static Item itemWand;
+	
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event) {
+		//Item/Block init and registering
+		//Config handling
+		itemBroom = new ItemBroom().setUnlocalizedName("ItemBroom"); 
+		GameRegistry.registerItem(itemBroom, itemBroom.getUnlocalizedName().substring(5));
+		
+		itemCoin = new ItemCoin().setUnlocalizedName("ItemCoin");
+		GameRegistry.registerItem(itemCoin, itemCoin.getUnlocalizedName().substring(5));	
+		
+		itemFlyingCar = new ItemFlyinCar().setUnlocalizedName("ItemFlyingCar"); //Maybe be removed
+		GameRegistry.registerItem(itemFlyingCar, itemFlyingCar.getUnlocalizedName().substring(5));
+		
+		itemWand = new ItemWand().setUnlocalizedName("ItemWand");
+		GameRegistry.registerItem(itemWand, itemWand.getUnlocalizedName().substring(5));
+	}
+	
+	@EventHandler
+	public void init(FMLInitializationEvent event) {
+		//Proxy, TILeENtity, entity, GUI and Packet Registering
+	}
+	
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event) {
+		
+	}
+}
